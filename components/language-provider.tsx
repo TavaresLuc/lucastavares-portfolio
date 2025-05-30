@@ -43,7 +43,7 @@ const translations = {
     "experience.highlight1.title": "Database Performance Optimization",
     "experience.highlight1.desc":
       "Achieved up to 90% reduction in query response times through advanced SQL Server optimization techniques, handling large-scale data operations with precision and efficiency.",
-    "experience.highlight2.title": "Fullstack Development Leadership",
+    "experience.highlight2.title": "Fullstack Development",
     "experience.highlight2.desc":
       "Experience using modern technologies including C# .NET, ReactJS, SQL Server, Git, and VB6, ensuring high standards of reliability and performance.",
     "experience.highlight3.title": "Process Automation & CI/CD",
