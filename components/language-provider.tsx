@@ -37,7 +37,7 @@ const translations = {
 
     // Experience
     "experience.title": "Professional Experience",
-    "experience.summary.title": "4+ Years of Fullstack Development Excellence",
+    "experience.summary.title": "3+ Years of Fullstack Development Excellence",
     "experience.summary.description":
       "Throughout my career, I have evolved from Technical Support to a Mid-level Fullstack Developer, consistently delivering high-impact solutions across diverse technology stacks. My journey spans multiple roles at leading technology companies, where I've specialized in building robust, scalable applications and optimizing complex database systems.",
     "experience.highlight1.title": "Database Performance Optimization",
@@ -45,7 +45,7 @@ const translations = {
       "Achieved up to 90% reduction in query response times through advanced SQL Server optimization techniques, handling large-scale data operations with precision and efficiency.",
     "experience.highlight2.title": "Fullstack Development Leadership",
     "experience.highlight2.desc":
-      "Led development of enterprise ERP and POS systems using modern technologies including C# .NET, ReactJS, and VB6, ensuring high reliability and performance standards.",
+      "Experience using modern technologies including C# .NET, ReactJS, SQL Server, Git, and VB6, ensuring high standards of reliability and performance.",
     "experience.highlight3.title": "Process Automation & CI/CD",
     "experience.highlight3.desc":
       "Implemented automated workflows and continuous integration pipelines, reducing bug resolution time by 40% and streamlining development processes across teams.",
