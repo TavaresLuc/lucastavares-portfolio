@@ -136,9 +136,9 @@ const translations = {
     "experience.highlight1.title": "Otimização de Performance de Banco de Dados",
     "experience.highlight1.desc":
       "Alcancei até 90% de redução no tempo de resposta de queries através de técnicas avançadas de otimização SQL Server, lidando com operações de dados em larga escala com precisão e eficiência.",
-    "experience.highlight2.title": "Liderança em Desenvolvimento Fullstack",
+    "experience.highlight2.title": "Desenvolvimento Fullstack",
     "experience.highlight2.desc":
-      "Liderei o desenvolvimento de sistemas ERP e PDV empresariais usando tecnologias modernas incluindo C# .NET, ReactJS e VB6, garantindo altos padrões de confiabilidade e performance.",
+      "Experiência usando tecnologias modernas incluindo C# .NET, ReactJS, SQL Server, Git e VB6, garantindo altos padrões de confiabilidade e performance.",
     "experience.highlight3.title": "Automação de Processos & CI/CD",
     "experience.highlight3.desc":
       "Implementei fluxos de trabalho automatizados e pipelines de integração contínua, reduzindo o tempo de resolução de bugs em 40% e otimizando processos de desenvolvimento entre equipes.",
