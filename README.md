@@ -9,7 +9,7 @@
 
 **A modern, responsive portfolio website showcasing fullstack development expertise**
 
-[🌐 Live Demo](https://your-portfolio-domain.vercel.app) • [📧 Contact](mailto:tavaresluc@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/lucas-o-tavares/)
+[🌐 Live Demo](https://lucastavares-portfolio.vercel.app) • [📧 Contact](mailto:tavaresluc@gmail.com) • [💼 LinkedIn](https://www.linkedin.com/in/lucas-o-tavares/)
 
 </div>
 
