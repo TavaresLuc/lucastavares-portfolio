@@ -93,7 +93,7 @@ This is a modern, fully responsive portfolio website built for Lucas Tavares, a 
 
 <div align="center">
 
-**🔗 [Live Portfolio](https://your-portfolio-domain.vercel.app) | 📧 [Get in Touch](mailto:tavaresluc@gmail.com)**
+**🔗 [Live Portfolio](lucastavares-portfolio.vercel.app) | 📧 [Get in Touch](mailto:tavaresluc@gmail.com)**
 
 ---
 
