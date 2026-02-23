@@ -44,32 +44,10 @@ export default function EnhancedExperience() {
   const achievements = ["90%", "40%", "4+", "15+"]
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-              {t("experience.title")}
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full"></div>
-          </div>
-
-          {/* Career Summary */}
-          <Card className="mb-12 border-0 shadow-xl bg-gradient-to-br from-primary/5 to-primary/10">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                {t("experience.summary.title")}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
-                {t("experience.summary.description")}
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Key Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {highlights.map((highlight, index) => {
               const IconComponent = highlight.icon
               return (
@@ -93,24 +71,7 @@ export default function EnhancedExperience() {
             })}
           </div>
 
-          {/* Career Progression Indicator */}
-          <div className="mt-12 text-center">
-            <div className="flex items-center justify-center space-x-4 max-w-2xl mx-auto">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-muted rounded-full"></div>
-                <span className="text-sm text-muted-foreground">Technical Support</span>
-              </div>
-              <div className="flex-1 h-0.5 bg-gradient-to-r from-muted via-primary/50 to-primary"></div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-primary rounded-full"></div>
-                <span className="text-sm font-medium">Fullstack Developer</span>
-              </div>
-            </div>
-            <div className="mt-4 flex items-center justify-center">
-              <TrendingUp className="h-4 w-4 text-primary mr-2" />
-              <span className="text-sm text-muted-foreground">Continuous Growth & Learning</span>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>

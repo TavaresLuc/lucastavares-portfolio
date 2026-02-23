@@ -61,15 +61,8 @@ export default function EnhancedHero() {
           <div
             className={`transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6 font-light">{t("hero.title")}</h2>
-          </div>
-
-          <div
-            className={`transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-          >
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              {t("hero.description")}
-            </p>
+            <h2 className="text-xl md:text-2xl text-muted-foreground mb-4 font-light">Fullstack Developer</h2>
+            <p className="text-base text-muted-foreground/80 mb-8 max-w-2xl mx-auto">.NET • SQL • React</p>
           </div>
 
           <div
