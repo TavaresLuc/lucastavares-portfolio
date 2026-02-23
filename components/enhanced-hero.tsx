@@ -62,7 +62,21 @@ export default function EnhancedHero() {
             className={`transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <h2 className="text-xl md:text-2xl text-muted-foreground mb-4 font-light">Fullstack Developer</h2>
-            <p className="text-base text-muted-foreground/80 mb-8 max-w-2xl mx-auto">.NET • SQL • React</p>
+            <div className="flex flex-wrap gap-3 justify-center items-center max-w-3xl mx-auto mb-8">
+              <span className="text-sm font-semibold text-primary">C# .NET</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-semibold text-primary">SQL Server</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">React</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">API REST</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">T-SQL</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">CI/CD</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">Clean Architecture</span>
+            </div>
           </div>
 
           <div
