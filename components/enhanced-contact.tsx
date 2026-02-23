@@ -45,50 +45,55 @@ export default function EnhancedContact() {
   ]
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-muted/30 via-background to-muted/20">
+    <section id="contact" className="py-24 bg-gradient-to-b from-muted/20 to-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-              {t("contact.title")}
+        <div className="max-w-5xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+              <Mail className="h-4 w-4 mr-2 text-primary" />
+              <span className="text-sm font-medium text-primary">{t("contact.title")}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
+              {t("contact.title") === "Contact" ? "Let's Work Together" : "Vamos Trabalhar Juntos"}
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("contact.description")}</p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("contact.description") || "I'm always open to new projects and collaborations"}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Contact Information */}
-            <Card className="border-0 shadow-xl bg-card/50 backdrop-blur-sm">
+            <Card className="border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 shadow-lg">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Mail className="h-4 w-4 text-primary" />
-                  </div>
-                  {t("contact.info")}
+                <CardTitle className="text-2xl">
+                  {t("contact.info") || "Get In Touch"}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-4">
                 {contactInfo.map((contact, index) => {
                   const IconComponent = contact.icon
                   return (
                     <div
                       key={index}
-                      className="flex items-center gap-4 p-3 rounded-lg hover:bg-accent/50 transition-colors"
+                      className="flex items-start gap-4 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors group"
                     >
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <IconComponent className="h-5 w-5 text-primary" />
+                      <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="h-6 w-6 text-primary" />
                       </div>
-                      <div className="flex-1">
-                        <div className="font-medium text-sm text-muted-foreground">{contact.label}</div>
+                      <div className="flex-1 pt-1">
+                        <div className="font-medium text-sm text-muted-foreground uppercase tracking-wide mb-1">
+                          {contact.label}
+                        </div>
                         {contact.href ? (
                           <a
                             href={contact.href}
-                            className="text-foreground hover:text-primary transition-colors font-medium"
+                            className="text-foreground font-semibold hover:text-primary transition-colors"
                           >
                             {contact.value}
                           </a>
                         ) : (
-                          <div className="text-foreground font-medium">{contact.value}</div>
+                          <div className="text-foreground font-semibold">{contact.value}</div>
                         )}
                       </div>
                     </div>
@@ -97,65 +102,62 @@ export default function EnhancedContact() {
               </CardContent>
             </Card>
 
-            {/* Social Links */}
-            <Card className="border-0 shadow-xl bg-card/50 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Send className="h-4 w-4 text-primary" />
-                  </div>
-                  {t("contact.connect")}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {socialLinks.map((social, index) => {
-                  const IconComponent = social.icon
-                  return (
+            {/* Social Links & CTA */}
+            <div className="flex flex-col gap-6">
+              <Card className="border-0 bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm shadow-lg flex-1">
+                <CardHeader>
+                  <CardTitle className="text-2xl">
+                    {t("contact.connect") || "Connect"}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-3">
+                  {socialLinks.map((social, index) => {
+                    const IconComponent = social.icon
+                    return (
+                      <Button
+                        key={index}
+                        variant="outline"
+                        className="h-12 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 group justify-start"
+                        asChild
+                      >
+                        <a href={social.href} target="_blank" rel="noopener noreferrer">
+                          <IconComponent className={`h-5 w-5 mr-3 transition-colors ${social.color}`} />
+                          <span className="font-semibold group-hover:translate-x-1 transition-transform duration-200">
+                            {social.label}
+                          </span>
+                        </a>
+                      </Button>
+                    )
+                  })}
+
+                  <div className="pt-4 border-t border-primary/10">
                     <Button
-                      key={index}
-                      variant="outline"
-                      className="w-full justify-start h-12 border-border/40 hover:border-primary/40 transition-all duration-200 group"
+                      size="lg"
+                      className="w-full h-12 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-200 group shadow-lg hover:shadow-xl"
                       asChild
                     >
-                      <a href={social.href} target="_blank" rel="noopener noreferrer">
-                        <IconComponent className={`h-5 w-5 mr-3 transition-colors ${social.color}`} />
-                        <span className="group-hover:translate-x-1 transition-transform duration-200">
-                          {social.label}
+                      <a href="mailto:tavaresluc@gmail.com">
+                        <Mail className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform duration-200" />
+                        <span className="font-semibold">
+                          {t("contact.send") || "Send Email"}
                         </span>
                       </a>
                     </Button>
-                  )
-                })}
-
-                <div className="pt-4">
-                  <Button
-                    className="w-full h-12 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-200 group"
-                    asChild
-                  >
-                    <a href="mailto:tavaresluc@gmail.com">
-                      <Mail className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform duration-200" />
-                      <span className="group-hover:translate-x-1 transition-transform duration-200">
-                        {t("contact.send")}
-                      </span>
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
-          {/* Decorative elements */}
-          <div className="mt-12 flex justify-center">
-            <div className="flex space-x-2">
-              <div className="w-3 h-3 bg-primary/60 rounded-full animate-bounce"></div>
-              <div
-                className="w-3 h-3 bg-primary/40 rounded-full animate-bounce"
-                style={{ animationDelay: "0.1s" }}
-              ></div>
-              <div
-                className="w-3 h-3 bg-primary/20 rounded-full animate-bounce"
-                style={{ animationDelay: "0.2s" }}
-              ></div>
+          {/* Status Indicator */}
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-muted/30 border border-primary/20">
+              <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-muted-foreground">
+                {t("contact.title") === "Contact"
+                  ? "Available for opportunities"
+                  : "Disponível para oportunidades"}
+              </span>
             </div>
           </div>
         </div>

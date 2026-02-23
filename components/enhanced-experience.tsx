@@ -44,45 +44,38 @@ export default function EnhancedExperience() {
   const achievements = ["90%", "40%", "4+", "15+"]
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-24 bg-gradient-to-b from-muted/20 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-              {t("experience.title")}
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+              <TrendingUp className="h-4 w-4 mr-2 text-primary" />
+              <span className="text-sm font-medium text-primary">{t("experience.title")}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
+              {t("experience.summary.title") || "Professional Journey"}
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("experience.summary.description") || "Building digital solutions with modern technologies"}
+            </p>
           </div>
 
-          {/* Career Summary */}
-          <Card className="mb-12 border-0 shadow-xl bg-gradient-to-br from-primary/5 to-primary/10">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                {t("experience.summary.title")}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
-                {t("experience.summary.description")}
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Key Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {/* Key Highlights Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             {highlights.map((highlight, index) => {
               const IconComponent = highlight.icon
               return (
                 <Card
                   key={index}
-                  className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group overflow-hidden"
                 >
-                  <CardHeader>
-                    <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-lg ${highlight.bgColor} flex items-center justify-center`}>
-                        <IconComponent className={`h-6 w-6 ${highlight.color}`} />
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start gap-4">
+                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="h-7 w-7 text-primary" />
                       </div>
-                      <CardTitle className="text-lg">{highlight.title}</CardTitle>
+                      <CardTitle className="text-xl leading-tight">{highlight.title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -93,22 +86,24 @@ export default function EnhancedExperience() {
             })}
           </div>
 
-          {/* Professional Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Professional Overview Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Companies */}
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Building2 className="h-5 w-5 text-primary" />
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Building2 className="h-5 w-5 text-primary" />
+                  </div>
                   {t("experience.companies")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   {companies.map((company, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span className="font-medium">{company}</span>
+                    <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="font-medium text-sm">{company}</span>
                     </div>
                   ))}
                 </div>
@@ -116,17 +111,19 @@ export default function EnhancedExperience() {
             </Card>
 
             {/* Technologies */}
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Code className="h-5 w-5 text-primary" />
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Code className="h-5 w-5 text-primary" />
+                  </div>
                   {t("experience.technologies")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((tech, index) => (
-                    <Badge key={index} variant="secondary" className="text-xs">
+                    <Badge key={index} variant="secondary" className="text-xs hover:bg-secondary/80 transition-colors">
                       {tech}
                     </Badge>
                   ))}
@@ -135,53 +132,36 @@ export default function EnhancedExperience() {
             </Card>
 
             {/* Key Metrics */}
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Trophy className="h-5 w-5 text-primary" />
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Trophy className="h-5 w-5 text-primary" />
+                  </div>
                   {t("experience.achievements")}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">90%</div>
-                    <div className="text-xs text-muted-foreground">Query Optimization</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">40%</div>
-                    <div className="text-xs text-muted-foreground">Bug Resolution</div>
-                  </div>
-                  <div className="text-center">
+                  <div className="text-center p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
                     <div className="text-2xl font-bold text-primary">4+</div>
-                    <div className="text-xs text-muted-foreground">Years Experience</div>
+                    <div className="text-xs text-muted-foreground font-medium">{t("about.title") === "About Me" ? "Years" : "Anos"}</div>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
                     <div className="text-2xl font-bold text-primary">15+</div>
-                    <div className="text-xs text-muted-foreground">Technologies</div>
+                    <div className="text-xs text-muted-foreground font-medium">{t("about.title") === "About Me" ? "Technologies" : "Techs"}</div>
+                  </div>
+                  <div className="text-center p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
+                    <div className="text-2xl font-bold text-primary">2</div>
+                    <div className="text-xs text-muted-foreground font-medium">{t("about.title") === "About Me" ? "Companies" : "Empresas"}</div>
+                  </div>
+                  <div className="text-center p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
+                    <div className="text-2xl font-bold text-primary">50+</div>
+                    <div className="text-xs text-muted-foreground font-medium">{t("about.title") === "About Me" ? "Projects" : "Projetos"}</div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Career Progression Indicator */}
-          <div className="mt-12 text-center">
-            <div className="flex items-center justify-center space-x-4 max-w-2xl mx-auto">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-muted rounded-full"></div>
-                <span className="text-sm text-muted-foreground">Technical Support</span>
-              </div>
-              <div className="flex-1 h-0.5 bg-gradient-to-r from-muted via-primary/50 to-primary"></div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-primary rounded-full"></div>
-                <span className="text-sm font-medium">Fullstack Developer</span>
-              </div>
-            </div>
-            <div className="mt-4 flex items-center justify-center">
-              <TrendingUp className="h-4 w-4 text-primary mr-2" />
-              <span className="text-sm text-muted-foreground">Continuous Growth & Learning</span>
-            </div>
           </div>
         </div>
       </div>
