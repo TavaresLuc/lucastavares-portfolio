@@ -76,28 +76,6 @@ export default function Skills() {
               )
             })}
           </div>
-
-          {/* Languages Section */}
-          <div className="mt-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-center">{t("languages.title")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                  <div>
-                    <div className="text-lg font-semibold">{t("languages.portuguese")}</div>
-                  </div>
-                  <div>
-                    <div className="text-lg font-semibold">{t("languages.english")}</div>
-                  </div>
-                  <div>
-                    <div className="text-lg font-semibold">{t("languages.spanish")}</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>
