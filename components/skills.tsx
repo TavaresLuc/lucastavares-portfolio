@@ -47,50 +47,26 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-24 bg-gradient-to-b from-muted/30 to-background">
+    <section id="skills" className="py-20 bg-muted/20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <span className="text-sm font-medium text-primary">{t("skills.title")}</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
-              {t("skills.title") === "Skills" ? "Technical Expertise" : "Expertise Técnico"}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("skills.title") === "Skills" 
-                ? "A comprehensive set of technologies and tools I've mastered over the years"
-                : "Um conjunto abrangente de tecnologias e ferramentas que domino"}
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{t("skills.title")}</h2>
 
-          {/* Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => {
               const IconComponent = category.icon
               return (
-                <Card
-                  key={index}
-                  className="h-full border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group overflow-hidden"
-                >
-                  <div className="h-1 w-full bg-gradient-to-r from-primary/20 to-primary/60"></div>
-                  <CardHeader className="pb-4">
-                    <CardTitle className="flex items-center gap-3 text-lg">
-                      <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="h-5 w-5 text-primary" />
-                      </div>
+                <Card key={index} className="h-full">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3">
+                      <IconComponent className="h-6 w-6 text-primary" />
                       {category.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {category.skills.map((skill, skillIndex) => (
-                        <Badge
-                          key={skillIndex}
-                          variant="secondary"
-                          className="text-xs hover:bg-secondary/80 transition-colors"
-                        >
+                        <Badge key={skillIndex} variant="secondary">
                           {skill}
                         </Badge>
                       ))}
@@ -102,39 +78,21 @@ export default function Skills() {
           </div>
 
           {/* Languages Section */}
-          <div>
-            <Card className="border-0 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 shadow-lg">
+          <div className="mt-12">
+            <Card>
               <CardHeader>
-                <CardTitle className="text-center text-2xl">{t("languages.title")}</CardTitle>
+                <CardTitle className="text-center">{t("languages.title")}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-6 text-center rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors group">
-                    <div className="text-3xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
-                      🇧🇷
-                    </div>
-                    <div className="font-semibold text-lg">{t("languages.portuguese")}</div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      {t("skills.title") === "Skills" ? "Native" : "Nativo"}
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-lg font-semibold">{t("languages.portuguese")}</div>
                   </div>
-                  <div className="p-6 text-center rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors group">
-                    <div className="text-3xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
-                      🇺🇸
-                    </div>
-                    <div className="font-semibold text-lg">{t("languages.english")}</div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      {t("skills.title") === "Skills" ? "Fluent" : "Fluente"}
-                    </div>
+                  <div>
+                    <div className="text-lg font-semibold">{t("languages.english")}</div>
                   </div>
-                  <div className="p-6 text-center rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors group">
-                    <div className="text-3xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
-                      🇪🇸
-                    </div>
-                    <div className="font-semibold text-lg">{t("languages.spanish")}</div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      {t("skills.title") === "Skills" ? "Intermediate" : "Intermediário"}
-                    </div>
+                  <div>
+                    <div className="text-lg font-semibold">{t("languages.spanish")}</div>
                   </div>
                 </div>
               </CardContent>
