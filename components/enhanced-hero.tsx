@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Download, Mail, ChevronDown } from "lucide-react"
+import { Mail, ChevronDown } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 export default function EnhancedHero() {
@@ -61,21 +61,28 @@ export default function EnhancedHero() {
           <div
             className={`transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6 font-light">{t("hero.title")}</h2>
-          </div>
-
-          <div
-            className={`transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-          >
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              {t("hero.description")}
-            </p>
+            <h2 className="text-xl md:text-2xl text-muted-foreground mb-4 font-light">Fullstack Developer</h2>
+            <div className="flex flex-wrap gap-3 justify-center items-center max-w-3xl mx-auto mb-8">
+              <span className="text-sm font-semibold text-primary">C# .NET</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-semibold text-primary">SQL Server</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">React</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">API REST</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">T-SQL</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">CI/CD</span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-sm font-medium text-muted-foreground">Clean Architecture</span>
+            </div>
           </div>
 
           <div
             className={`transition-all duration-1000 delay-900 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex justify-center mb-12">
               <Button
                 size="lg"
                 onClick={scrollToContact}
@@ -83,14 +90,6 @@ export default function EnhancedHero() {
               >
                 <Mail className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
                 {t("hero.cta")}
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 border-primary/40 hover:border-primary hover:bg-primary/5 transition-all duration-200 group"
-              >
-                <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
-                {t("hero.download")}
               </Button>
             </div>
           </div>

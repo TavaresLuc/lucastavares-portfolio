@@ -7,7 +7,7 @@ import EnhancedAbout from "@/components/enhanced-about"
 import EnhancedExperience from "@/components/enhanced-experience"
 import Skills from "@/components/skills"
 import Projects from "@/components/projects"
-import Education from "@/components/education"
+
 import EnhancedContact from "@/components/enhanced-contact"
 import Footer from "@/components/footer"
 
@@ -23,7 +23,6 @@ export default function Portfolio() {
             <EnhancedExperience />
             <Skills />
             <Projects />
-            <Education />
             <EnhancedContact />
           </main>
           <Footer />
